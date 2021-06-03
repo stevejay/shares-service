@@ -1,0 +1,37 @@
+{
+  "overwrite": true,
+  "schema": "./src/**/*.graphql",
+  "documents": null,
+  "generates": {
+    "src/resolvers-types.generated.ts": {
+      "config": {
+        "scalars": {
+          "LocalDate": "string",
+          "NonNegativeInt": "number",
+          "NonNegativeFloat": "number",
+          "Upload": "FileUpload"
+        },
+        "useIndexSignature": true,
+        "contextType": "./types#Context",
+        "defaultMapper": "Partial<{T}>",
+        "noSchemaStitching": true
+      },
+      "plugins": [
+        {
+          "add": {
+            "content": [
+              "// THIS FILE IS AUTO-GENERATED. PLEASE DO NOT EDIT IT.",
+              "/* eslint-disable */",
+              "import { FileUpload } from 'graphql-upload';"
+            ]
+          }
+        },
+        "typescript",
+        "typescript-resolvers"
+      ]
+    }
+  },
+  "hooks": {
+    "afterAllFileWrite": ["prettier --write"]
+  }
+}

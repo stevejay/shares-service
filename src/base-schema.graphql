@@ -1,0 +1,80 @@
+directive @constraint(
+  # String constraints
+  minLength: Int
+  maxLength: Int
+  startsWith: String
+  endsWith: String
+  contains: String
+  notContains: String
+  pattern: String
+  format: String
+  # Number constraints
+  min: Int
+  max: Int
+  exclusiveMin: Int
+  exclusiveMax: Int
+  multipleOf: Int
+  uniqueTypeName: String
+) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+
+# """
+# Custom scalar type for RFC 3339 full date string, such as '2007-12-03'.
+# From the graphql-scalars package.
+
+# From graphql-scalars library:
+# "The value is serialized and deserialized as a string as a signal
+# to both clients and resolvers that special care must be taken
+# with the value when converting it to any date/time type that includes
+# a timezone, e.g., a JavaScript Date."
+# """
+# scalar LocalDate
+
+# """
+# Custom scalar type for non negative integers
+# """
+# scalar NonNegativeInt
+
+# """
+# Custom scalar type for non negative floating point values
+# """
+# scalar NonNegativeFloat
+
+# """
+# A basic sort order enum
+# """
+# enum SortOrder {
+#   """
+#   Sort ascending
+#   """
+#   ASC
+#   """
+#   Sort descending
+#   """
+#   DESC
+# }
+
+# """
+# The page information for offset-based pagination
+# """
+# type PageInfo {
+#   """
+#   The number of results skipped
+#   """
+#   after: Int!
+#   """
+#   The page size
+#   """
+#   first: Int!
+# }
+
+# """
+# Scalar type for file uploads.
+
+# See https://www.apollographql.com/docs/apollo-server/data/file-uploads/
+# """
+# scalar Upload
+
+"""
+The root query type
+"""
+type Query

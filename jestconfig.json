@@ -1,0 +1,10 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "rootDir": "src",
+  "setupFiles": ["./setup-tests.ts"],
+  "moduleNameMapper": {
+    "^app/(.*)": "<rootDir>/$1"
+  },
+  "clearMocks": true
+}

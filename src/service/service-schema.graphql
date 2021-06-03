@@ -1,0 +1,16 @@
+"""
+The user entity
+"""
+type User {
+  """
+  The user's name
+  """
+  name: String!
+}
+
+extend type Query {
+  """
+  Gets all users
+  """
+  getAllUsers: [User!]!
+}
