@@ -1,7 +1,7 @@
 import { ApolloError } from 'apollo-server-express';
-import { Resolvers } from 'resolvers-types.generated';
 
-import { getCompany } from '../data/lse-issuer-client';
+import { getCompany } from '../data/lse-issuer-client.js';
+import { Resolvers } from '../resolvers-types.generated.js';
 
 export const serviceResolver: Resolvers = {
   Query: {

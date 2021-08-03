@@ -1,15 +1,13 @@
-import { Knex, knex } from 'knex';
-import path from 'path';
-// import { dirname } from 'path';
-// import { fileURLToPath } from 'url';
+import knex, { Knex } from 'knex';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
-// const __dirname = dirname(fileURLToPath(import.meta.url));
-// console.log(__dirname);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config: Knex.Config = {
   client: 'sqlite3',
   connection: {
-    filename: path.join(__dirname, './lse-issuers.db'),
+    filename: join(__dirname, './lse-issuers.db'),
   },
   useNullAsDefault: true,
 };

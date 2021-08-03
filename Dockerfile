@@ -17,4 +17,5 @@ EXPOSE 4000
 WORKDIR /usr/src/app
 COPY --chown=node:node --from=build /usr/src/app/node_modules /usr/src/app/node_modules
 COPY --chown=node:node ./dist /usr/src/app
+COPY --chown=node:node package.json /usr/src/app/
 CMD ["dumb-init", "node", "server.js"]

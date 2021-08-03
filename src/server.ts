@@ -1,4 +1,4 @@
-import './open-telemetry';
+import './open-telemetry.js';
 
 import { ApolloServer } from 'apollo-server-express';
 import compression from 'compression';
@@ -9,24 +9,24 @@ import { createServer } from 'http';
 // import sqlite3 from 'sqlite3';
 // import { open } from 'sqlite';
 // import helmet from "helmet";
-import { schema } from './schema';
+import { schema } from './schema.js';
 
 const PORT = process.env.PORT || 4000;
 
-(async () => {
-  const app = express();
-  app.use(cors());
-  app.use(compression());
-  const server = new ApolloServer({
-    schema,
-  });
-  await server.start();
-  server.applyMiddleware({ app, path: '/graphql' });
-  const httpServer = createServer(app);
-  httpServer.listen({ port: PORT }, (): void =>
-    console.log(`🚀GraphQL-Server is running on http://localhost:${PORT}/graphql`)
-  );
-})().catch(console.error);
+// (async () => {
+const app = express();
+app.use(cors());
+app.use(compression());
+const server = new ApolloServer({
+  schema,
+});
+await server.start();
+server.applyMiddleware({ app, path: '/graphql' });
+const httpServer = createServer(app);
+httpServer.listen({ port: PORT }, (): void =>
+  console.log(`🚀GraphQL-Server is running on http://localhost:${PORT}/graphql`)
+);
+// })().catch(console.error);
 
 async function closeGracefully(signal: NodeJS.Signals) {
   console.log(`*^!@4=> Received signal to terminate: ${signal}`);

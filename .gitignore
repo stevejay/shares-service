@@ -105,3 +105,7 @@ dist
 
 # General build output
 build/
+
+# Generated data files
+src/data/security-data/
+src/data/lse-issuers.db
