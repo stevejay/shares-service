@@ -23,10 +23,7 @@ module.exports = {
     'simple-import-sort/imports': [
       'error',
       {
-        groups: [
-          ['^@?\\w', '^\\u0000'],
-          ['^app/', '^', '^\\.'],
-        ],
+        groups: [['^\\u0000'], ['^@?\\w'], ['^app/', '^', '^\\.']],
       },
     ],
     'unicorn/filename-case': [
