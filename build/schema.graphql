@@ -23,10 +23,10 @@ directive @constraint(
 The company entity
 """
 type Company {
-  id: ID!
   """
   Temp
   """
+  id: ID!
   name: String!
   """
   Temp
