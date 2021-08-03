@@ -27,6 +27,12 @@
         "typescript",
         "typescript-resolvers"
       ]
+    },
+    "build/schema.graphql": {
+      "plugins": ["schema-ast"],
+      "config": {
+        "includeDirectives": true
+      }
     }
   },
   "hooks": {
