@@ -1,0 +1,5 @@
+services:
+  backend:
+    image: shares-service/app
+    ports:
+      - '4000:4000'

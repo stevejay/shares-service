@@ -8,8 +8,7 @@
         "scalars": {
           "LocalDate": "string",
           "NonNegativeInt": "number",
-          "NonNegativeFloat": "number",
-          "Upload": "FileUpload"
+          "NonNegativeFloat": "number"
         },
         "useIndexSignature": true,
         "contextType": "./types#Context",
@@ -21,14 +20,19 @@
           "add": {
             "content": [
               "// THIS FILE IS AUTO-GENERATED. PLEASE DO NOT EDIT IT.",
-              "/* eslint-disable */",
-              "import { FileUpload } from 'graphql-upload';"
+              "/* eslint-disable */"
             ]
           }
         },
         "typescript",
         "typescript-resolvers"
       ]
+    },
+    "build/schema.graphql": {
+      "plugins": ["schema-ast"],
+      "config": {
+        "includeDirectives": true
+      }
     }
   },
   "hooks": {

@@ -1,0 +1,53 @@
+"""
+The company entity
+"""
+type Company {
+  """
+  Temp
+  """
+  id: ID!
+  """
+  Temp
+  """
+  name: String!
+  #   market: LSEMarket!
+  """
+  Temp
+  """
+  icbIndustry: String
+  """
+  Temp
+  """
+  icbSuperSector: String
+  """
+  Temp
+  """
+  country: String!
+  """
+  Temp
+  """
+  listedDate: LocalDate
+  """
+  Temp
+  """
+  updatedDate: LocalDate
+}
+
+# [0] company {
+# [0]   id: 1299,
+# [0]   company: 'TRAINLINE PLC',
+# [0]   company_normalised: 'TRAINLINE',
+# [0]   market: 'MainMarket',
+# [0]   icb_industry: 'Consumer Discretionary',
+# [0]   icb_supersector: 'Travel and Leisure',
+# [0]   country: 'GB',
+# [0]   listed_date: '2019-06-21',
+# [0]   updated_date: '2021-04-01'
+# [0] }
+
+extend type Query {
+  """
+  Company
+  """
+  company: Company!
+}
