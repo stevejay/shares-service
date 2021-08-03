@@ -1,0 +1,90 @@
+schema {
+  query: Query
+}
+
+directive @constraint(
+  minLength: Int
+  maxLength: Int
+  startsWith: String
+  endsWith: String
+  contains: String
+  notContains: String
+  pattern: String
+  format: String
+  min: Int
+  max: Int
+  exclusiveMin: Int
+  exclusiveMax: Int
+  multipleOf: Int
+  uniqueTypeName: String
+) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+
+"""
+The company entity
+"""
+type Company {
+  """
+  Temp
+  """
+  id: ID!
+  """
+  Temp
+  """
+  name: String!
+  """
+  Temp
+  """
+  icbIndustry: String
+  """
+  Temp
+  """
+  icbSuperSector: String
+  """
+  Temp
+  """
+  country: String!
+  """
+  Temp
+  """
+  listedDate: LocalDate
+  """
+  Temp
+  """
+  updatedDate: LocalDate
+}
+
+"""
+Custom scalar type for RFC 3339 full date string, such as '2007-12-03'.
+From the graphql-scalars package.
+
+From graphql-scalars library:
+"The value is serialized and deserialized as a string as a signal
+to both clients and resolvers that special care must be taken
+with the value when converting it to any date/time type that includes
+a timezone, e.g., a JavaScript Date."
+"""
+scalar LocalDate
+
+"""
+The root query type
+"""
+type Query {
+  """
+  Company
+  """
+  company: Company!
+  """
+  Gets all users
+  """
+  getAllUsers: [User!]!
+}
+
+"""
+The user entity
+"""
+type User {
+  """
+  The user's name
+  """
+  name: String!
+}
