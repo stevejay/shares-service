@@ -27,6 +27,9 @@ type Company {
   Temp
   """
   id: ID!
+  """
+  Temp
+  """
   name: String!
   """
   Temp
